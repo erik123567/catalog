@@ -1,0 +1,25 @@
+.header{
+	font-size: 40px;
+	color:blue;
+	background-color:lightgreen;
+}
+div{
+	font-size:48px;
+}
+body{
+	background-color:lightblue;
+	color:black;
+}
+a{
+	color:white;
+
+}
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+.col-md-6{
+	color:white;
+}
+.header p{
+	text-align: center;
+}

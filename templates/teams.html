@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{% block content %}
+<div class='header'>
+{% include "header.html" %}
+<p>Hello! {{session['email']}} </p>
+</div>
+<div class='col-md-6'>
+			<h1>Teams</h1>
+			
+						{% for team in teams %}
+	<a href = "{{url_for('showRoster', team_id = team.id)}}">
+	<div class="row">
+		<h3>{{team.name}}</h3>
+	</div>
+	</a>
+						{% endfor %}
+</div>
+
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+	
+<div class='col-md-3'
+
+</div>
+
+	<div>
+		<a href="{{url_for('newTeam')}}">
+		<button class="btn btn-default" id="new-team">
+			<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>Add Team
+		</button>
+	</a>
+	<p> My Teams:</p>
+				{% for t in yourTeams %}
+
+	<a href = "{{url_for('showRoster', team_id = t.id)}}">
+					<div class="col-md-1"></div>
+
+	
+			<h1>{{t.name}}</h1>
+	{% endfor %}
+			</div>
+			</a>
+			</div>
+{% endblock %}
+<div class="verticalLine">
+
+</div>
